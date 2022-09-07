@@ -1,8 +1,6 @@
 import React from "react";
 
 const Pokeinfo = ({pokemon}) => {
-	//https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/heartgold-soulsilver/25.png
-	console.log(pokemon);
 	return (
 		<>
 			{!pokemon ? (
