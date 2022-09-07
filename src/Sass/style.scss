@@ -3,7 +3,7 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: $font-family;
 }
 
 body{
@@ -22,11 +22,11 @@ body{
     
     .left-content{
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
         grid-gap: 2rem;
 
         .card{
-            width: 300px;
+            width: 320px;
             background-color: $card-color;
             border-radius: 1rem;
             box-shadow: 0 5px 5px rgba(0,0,0,0.5);
@@ -35,6 +35,12 @@ body{
             align-items: center;
             justify-content: space-between;
             box-sizing: border-box;
+            
+            h2:nth-last-child(1){
+                text-transform: capitalize;
+                text-align: end;
+                width: 150px;
+            }
         }
 
         .btn-group{
@@ -55,7 +61,7 @@ body{
         
         .poke-stat{
             position: fixed;
-            width: 300px;
+            width: 400px;
             top: 6rem;
             
             img {
@@ -75,7 +81,7 @@ body{
                 grid-template-columns: repeat(auto-fit,1fr); 
                 justify-content: center;
                 grid-auto-flow: column;
-                grid-gap: 0.5rem;
+                grid-gap: 5px;
                 margin-top: 1rem;
                 
                 .ability{
@@ -93,6 +99,7 @@ body{
                 margin-top: 2rem;
                 
                 .stat{
+                    text-transform: capitalize;
                     color: $font-color;
                 }
             }
