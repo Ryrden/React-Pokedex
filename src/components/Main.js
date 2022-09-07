@@ -10,29 +10,29 @@ const Main = () => {
 	const [prevUrl, setPrevUrl] = useState("");
 	const [pokeDex, setPokeDex] = useState();
 
-	const pokeFun = async () => {
-		setLoading(true);
-		const res = await axios.get(url);
-
-		setNextUrl(res.data.next);
-		setPrevUrl(res.data.previous);
-		getPokemon(res.data.results);
-		setLoading(false);
-	};
-
-	const getPokemon = async (data) => {
-		data.map(async (pokemon) => {
-			let pokemonRecord = await axios.get(pokemon.url);
-
-			setPokeData((state) => {
-				state = [...state, pokemonRecord.data];
-				state.sort((a, b) => (a.id > b.id ? 1 : -1));
-				return state;
-			});
-		});
-	};
-
 	useEffect(() => {
+		const pokeFun = async () => {
+			setLoading(true);
+			const res = await axios.get(url);
+
+			setNextUrl(res.data.next);
+			setPrevUrl(res.data.previous);
+			getPokemon(res.data.results);
+			setLoading(false);
+		};
+
+		const getPokemon = async (data) => {
+			data.map(async (pokemon) => {
+				let pokemonRecord = await axios.get(pokemon.url);
+
+				setPokeData((state) => {
+					state = [...state, pokemonRecord.data];
+					state.sort((a, b) => (a.id > b.id ? 1 : -1));
+					return state;
+				});
+			});
+		};
+
 		pokeFun();
 	}, [url]);
 
@@ -44,6 +44,7 @@ const Main = () => {
 
 					<div className="btn-group">
 						<button
+							className="button"
 							onClick={() => {
 								setUrl(prevUrl);
 								setPokeData([]);
@@ -52,6 +53,7 @@ const Main = () => {
 							Previous
 						</button>
 						<button
+							className="button"
 							onClick={() => {
 								setUrl(nextUrl);
 								setPokeData([]);
@@ -62,7 +64,9 @@ const Main = () => {
 					</div>
 				</div>
 				<div className="right-content">
-					<Pokeinfo pokemon={pokeDex} />
+					<div className="poke-stat">
+						<Pokeinfo pokemon={pokeDex} />
+					</div>
 				</div>
 			</div>
 		</>

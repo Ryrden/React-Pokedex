@@ -19,7 +19,7 @@ body {
 }
 .container .left-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 2rem;
 }
 .container .left-content .card {
@@ -50,35 +50,45 @@ body {
 }
 .container .right-content {
   width: 50%;
+  display: flex;
+  justify-content: center;
   text-align: center;
   color: black;
+}
+.container .right-content .poke-stat {
   position: fixed;
-  top: 100px;
-  right: 100px;
+  width: 300px;
+  top: 6rem;
 }
-.container .right-content img {
+.container .right-content .poke-stat img {
   margin: 2rem;
+  height: 190px;
 }
-.container .right-content h1 {
+.container .right-content .poke-stat h1 {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
 }
-.container .right-content .abilities {
-  width: 30%;
-  margin: auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.container .right-content .poke-stat .abilities {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  justify-content: center;
+  grid-auto-flow: column;
+  grid-gap: 0.5rem;
   margin-top: 1rem;
 }
-.container .right-content .abilities .group {
+.container .right-content .poke-stat .abilities .ability {
   background-color: #b74555;
   color: white;
   padding: 0.5rem;
-  font-size: 12px;
+  margin: 0 0.2em;
+  font-size: 10px;
   border-radius: 8px;
 }
-.container .right-content .base-stat {
-  margin: top 2rem;
+.container .right-content .poke-stat .base-stat {
+  margin-top: 2rem;
+}
+.container .right-content .poke-stat .base-stat .stat {
+  color: black;
 }/*# sourceMappingURL=style.css.map */

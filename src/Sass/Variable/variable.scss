@@ -1,0 +1,22 @@
+$background-color: #FCEEC8;
+$font-color: black;
+
+$card-color: #9EDEF9;
+
+$primary-btn-text-color: white;
+
+$primary-btn: #b74555;
+
+
+@mixin buttonStyle() {
+    outline: none;
+    border: none;
+    width:150px;
+    padding: 0.3rem 0;
+    margin: 1rem;
+    font-size: 17px;
+    font-weight: bold;
+    color: $primary-btn-text-color;
+    background-color: $primary-btn;
+    border-radius: 8px;
+}
